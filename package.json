@@ -1,0 +1,24 @@
+{
+  "name": "stephaniewedding",
+  "version": "1.0.0",
+  "description": "Note-taking app for my cuz",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server.js",
+    "start": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reburke286/StephanieWedding.git"
+  },
+  "author": "Becca Burke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reburke286/StephanieWedding/issues"
+  },
+  "homepage": "https://github.com/reburke286/StephanieWedding#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

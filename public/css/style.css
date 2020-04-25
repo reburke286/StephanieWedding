@@ -1,0 +1,33 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+a {
+  background-color: rgb(141, 137, 137);
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  border-color: lightgray;
+  border-style: solid;
+  color: white;
+}
+
+a :hover {
+  color: pink;
+  font-weight: bold;
+}
+
+.container img {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+}
+
+.content {
+  margin: 140px;
+  padding: 140px;
+}
