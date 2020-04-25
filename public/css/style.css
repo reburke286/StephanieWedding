@@ -2,6 +2,11 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.navbar {
+  width: 1500px;
+  margin-left: -200px;
+}
+
 a {
   background-color: rgb(141, 137, 137);
   text-align: center;
