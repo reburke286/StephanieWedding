@@ -21,8 +21,11 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/html/index.html"));
 });
 
-app.get("/add", function (req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+app.get("/pictures", function (req, res) {
+  res.sendFile(path.join(__dirname, "./public/html/pictures.html"));
+});
+app.get("/gifts", function (req, res) {
+  res.sendFile(path.join(__dirname, "./public/html/gifts.html"));
 });
 
 // Displays all characters
