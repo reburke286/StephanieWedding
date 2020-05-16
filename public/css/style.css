@@ -1,10 +1,11 @@
 body {
   font-family: "Courier New", Courier, monospace;
+  color: black;
+  font-weight: bold;
 }
 
-.navbar {
-  width: 1500px;
-  margin-left: -200px;
+nav {
+  background-color: #fce4ec !important;
 }
 
 a {
@@ -29,10 +30,33 @@ a :hover {
   top: 0;
   width: 100%;
   height: auto;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .content {
   margin: 140px;
   padding: 140px;
+}
+
+input::placeholder { 
+  color: black;
+  font-weight: bold
+}
+
+textarea::placeholder { 
+  color: black;
+  font-weight: bold
+}
+label {
+  color: black;
+  font-weight: bold;
+}
+
+span {
+  color: black;
+  font-weight: bold;
+}
+
+.btn {
+  color: black;
 }

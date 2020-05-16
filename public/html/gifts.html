@@ -1,52 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stephanie's Getting Married!</title>
 
-    <!--Compiled and Minified Stylesheets-->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephanie's Getting Married!</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-    <!-- Compiled and minified JavaScript -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.0.min.js"
-      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="./script/script.js" ;></script>
-  </head>
-  <body>
-    <div class="container">
-      <img src="./css/assets/images/background.jpg" />
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="/"
-                >Home <span class="sr-only"></span
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pictures">Pictures</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/gifts">Gifts</a>
-            </li>
-          </ul>
+  <!--Compiled and Minified Stylesheets-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./script/script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <img src="./css/assets/images/background.jpg" />
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pictures">Pictures</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/gifts">Gifts</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Note Input-->
+
+
+    <form action="#" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Name" id="name" type="text">
         </div>
-      </nav>
-    </div>
-  </body>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea placeholder="Gift Description" id="gift" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Date Received" id="date" type="text" class="datepicker">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea placeholder="Address" id="address" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn waves-effect waves-light red lighten-2">
+            <span>Image</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <p>
+            Thank You Note Sent
+          </p>
+          <p>
+            <label>
+              <input name="yes" type="radio" />
+              <span>Yes</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="no" type="radio" />
+              <span>No</span>
+            </label>
+          </p>
+        </div>
+      </div>
+      <button class="btn-large waves-effect waves-light red lighten-2" type="submit" name="action">Submit
+      </button>
+
+
+    </form>
+
+
+  </div>
+</body>
+
 </html>

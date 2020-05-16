@@ -5,4 +5,5 @@ $(document).ready(function () {
   $(".gift").click(function () {
     console.log("gift button");
   });
+  $('.datepicker').datepicker();
 });
