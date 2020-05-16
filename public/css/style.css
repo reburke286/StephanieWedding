@@ -23,6 +23,10 @@ a :hover {
   font-weight: bold;
 }
 
+#left-btn {
+  padding-right:100px;
+}
+
 .container img {
   position: absolute;
   z-index: -1;
