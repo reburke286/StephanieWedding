@@ -28,7 +28,12 @@ app.get("/gifts", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/html/gifts.html"));
 });
 
-// Displays all characters
+// Post Routes
+
+app.post("/pictures", (req, res) => {
+  const pictures = req.body;
+  res.json(pictures);
+});
 app.get("/api/characters", function (req, res) {
   return res.json(characters);
 });

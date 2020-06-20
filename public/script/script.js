@@ -1,7 +1,11 @@
 $(document).ready(function () {
+  //pictures.html code
   $(".pic").click(function () {
-    console.log("pic button");
+    const selectedFile = document.getElementById("pictures").files[0];
+    console.log(selectedFile);
   });
+
+  //gifts.html code
   $(".gift").click(function () {
     console.log("gift button");
   });

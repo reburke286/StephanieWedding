@@ -32,6 +32,8 @@
   <body>
     <div class="container">
       <img src="./css/assets/images/background.jpg" />
+
+      <!--NavBar-->
       <nav class="navbar navbar-expand-lg">
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -49,22 +51,24 @@
           </ul>
         </div>
       </nav>
-
+      <!--Page Content-->
       <h3>Add Picture</h3>
 
       <div class="row">
-        <div class="file-field input-field">
-          <div class="btn waves-effect waves-light red lighten-2">
-            <span>Image</span>
-            <input type="file" />
+        <form action="POST" action="pictures">
+          <div class="file-field input-field">
+            <div class="btn waves-effect waves-light red lighten-2">
+              <span>Image</span>
+              <input type="file" id="pictures" multiple />
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" />
+            </div>
           </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" />
-          </div>
-        </div>
+        </form>
       </div>
       <button
-        class="btn-large waves-effect waves-light red lighten-2"
+        class="btn-large waves-effect waves-light red lighten-2 pic"
         type="submit"
         name="action"
       >
