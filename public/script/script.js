@@ -1,17 +1,18 @@
 $(document).ready(function () {
   //pictures.html code
-  $(".pic").click(function () {
+  $(".picBtn").click(function () {
     const selectedFile = document.getElementById("pictures").files[0];
     console.log(selectedFile);
+    $(".file-path").val("");
   });
 
   //gifts.html code
-  $(".gift").click(function () {
-    console.log("gift button");
-  });
+  // $(".giftBtn").click(function () {
+  //   console.log("gift button");
+  // });
   $(".datepicker").datepicker();
 
-  $(".btn-large").on("click", function (event) {
+  $(".giftBtn").on("click", function (event) {
     event.preventDefault();
 
     const sentNoVar = $("#sentNo").prop("checked");
@@ -32,6 +33,7 @@ $(document).ready(function () {
       gift: $("#gift").val(),
       date: $("#date").val(),
       address: $("#address").val(),
+      image: document.getElementById("#giftPic").files[0],
       sent: sent,
     };
     console.log(giftInfo);
@@ -50,6 +52,7 @@ $(document).ready(function () {
     $("#gift").val("");
     $("#date").val("");
     $("#address").val("");
+    $(".file-path").val("");
     $(".sent").prop("checked", false);
   });
 });
