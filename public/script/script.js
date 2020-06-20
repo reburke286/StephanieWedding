@@ -32,6 +32,20 @@ $(document).ready(function () {
     };
     console.log(giftInfo);
 
+    const newRow = `<div class="col s9">
+    <p>${giftInfo.name}</p>
+  </div>
+  <div class="col s3">
+    <a class="btn red lighten-2 edit">
+      <i class="material-icons">edit</i>
+    </a>
+  </div>`;
+    $("#gifts").append(newRow);
+
+    $("#name").val("");
+    $("#gift").val("");
+    $("#date").val("");
+    $("#address").val("");
     $(".sent").prop("checked", false);
   });
 });

@@ -24,7 +24,7 @@ a :hover {
 }
 
 #left-btn {
-  padding-right:100px;
+  padding-right: 100px;
 }
 
 .container img {
@@ -34,7 +34,7 @@ a :hover {
   top: 0;
   width: 100%;
   height: auto;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .content {
@@ -42,14 +42,14 @@ a :hover {
   padding: 140px;
 }
 
-input::placeholder { 
+input::placeholder {
   color: black;
-  font-weight: bold
+  font-weight: bold;
 }
 
-textarea::placeholder { 
+textarea::placeholder {
   color: black;
-  font-weight: bold
+  font-weight: bold;
 }
 label {
   color: black;
@@ -63,4 +63,16 @@ span {
 
 .btn {
   color: black;
+}
+
+input {
+  font-weight: bold;
+}
+
+textarea {
+  font-weight: bold;
+}
+
+.edit {
+  float: right;
 }

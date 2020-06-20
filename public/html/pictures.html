@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephanie's Getting Married!</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stephanie's Getting Married!</title>
-  <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <!--Compiled and Minified Stylesheets-->
 
-  <!--Compiled and Minified Stylesheets-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="./css/style.css" />
+    <!-- Compiled and minified JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./script/script.js"></script>
+  </head>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./script/script.js"></script>
-</head>
-
-<body>
-  <div class="container">
-    <img src="./css/assets/images/background.jpg" />
-    <nav class="navbar navbar-expand-lg">
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pictures">Pictures</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/gifts">Gifts</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <h3>Add Picture</h3>
-
-    <div class="row">
-      <div class="file-field input-field">
-        <div class="btn waves-effect waves-light red lighten-2">
-          <span>Image</span>
-          <input type="file">
+  <body>
+    <div class="container">
+      <img src="./css/assets/images/background.jpg" />
+      <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pictures">Pictures</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/gifts">Gifts</a>
+            </li>
+          </ul>
         </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
+      </nav>
+
+      <h3>Add Picture</h3>
+
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn waves-effect waves-light red lighten-2">
+            <span>Image</span>
+            <input type="file" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
         </div>
       </div>
+      <button
+        class="btn-large waves-effect waves-light red lighten-2"
+        type="submit"
+        name="action"
+      >
+        Submit
+      </button>
     </div>
-    <button class="btn-large waves-effect waves-light red lighten-2" type="submit" name="action">Submit
-    </button>
-  </div>
-</body>
-
+  </body>
 </html>
