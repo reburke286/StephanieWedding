@@ -16,23 +16,23 @@ module.exports = function (sequelize, DataTypes) {
     },
     date: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1],
       },
     },
     address: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       len: [1],
     },
     image: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       len: [1],
     },
     sent: {
-      type: DataTypes.TEXT,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       len: [1],
     },

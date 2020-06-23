@@ -15,6 +15,10 @@ $(document).ready(function () {
   $(".giftBtn").on("click", function (event) {
     event.preventDefault();
 
+    // image file
+    // const image = document.getElementById("#giftPic").files;
+
+    //sent radio button
     const sentNoVar = $("#sentNo").prop("checked");
 
     const sentYesVar = $("#sentYes").prop("checked");
@@ -33,7 +37,7 @@ $(document).ready(function () {
       gift: $("#gift").val(),
       date: $("#date").val(),
       address: $("#address").val(),
-      image: document.getElementById("#giftPic").files[0],
+      // image: image,
       sent: sent,
     };
     console.log(giftInfo);
