@@ -42,6 +42,18 @@ $(document).ready(function () {
     };
     console.log(giftInfo);
 
+    // Send the POST request.
+    $.post("/api/notes", giftInfo).then(() => {
+      // Reload the page to get the updated list
+
+      $("#name").val("");
+      $("#gift").val("");
+      $("#date").val("");
+      $("#address").val("");
+      $(".file-path").val("");
+      $(".sent").prop("checked", false);
+    });
+
     const newRow = `<div class="col s9">
     <p>${giftInfo.name}</p>
   </div>
@@ -50,13 +62,7 @@ $(document).ready(function () {
       <i class="material-icons">edit</i>
     </a>
   </div>`;
-    $("#gifts").append(newRow);
 
-    $("#name").val("");
-    $("#gift").val("");
-    $("#date").val("");
-    $("#address").val("");
-    $(".file-path").val("");
-    $(".sent").prop("checked", false);
+    $("#gifts").append(newRow);
   });
 });

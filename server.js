@@ -28,50 +28,53 @@ app.get("/gifts", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/html/gifts.html"));
 });
 
+app.use(require("./routes/notes.js"));
 // Post Routes
 
 app.post("/pictures", (req, res) => {
   const pictures = req.body;
   res.json(pictures);
 });
-app.get("/api/characters", function (req, res) {
-  return res.json(characters);
-});
+// app.get("/api/characters", function (req, res) {
+//   return res.json(characters);
+// });
 
-// Displays a single character, or returns false
-app.get("/api/characters/:character", function (req, res) {
-  var chosen = req.params.character;
+// // Displays a single character, or returns false
+// app.get("/api/characters/:character", function (req, res) {
+//   var chosen = req.params.character;
 
-  console.log(chosen);
+//   console.log(chosen);
 
-  for (var i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
-    }
-  }
+//   for (var i = 0; i < characters.length; i++) {
+//     if (chosen === characters[i].routeName) {
+//       return res.json(characters[i]);
+//     }
+//   }
 
-  return res.json(false);
-});
+//   return res.json(false);
+// });
 
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function (req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  var newCharacter = req.body;
+// // Create New Characters - takes in JSON input
+// app.post("/api/characters", function (req, res) {
+//   // req.body hosts is equal to the JSON post sent from the user
+//   // This works because of our body parsing middleware
+//   var newCharacter = req.body;
 
-  // Using a RegEx Pattern to remove spaces from newCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
+//   // Using a RegEx Pattern to remove spaces from newCharacter
+//   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+//   newCharacter.routeName = newCharacter.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newCharacter);
+//   console.log(newCharacter);
 
-  characters.push(newCharacter);
+//   characters.push(newCharacter);
 
-  res.json(newCharacter);
-});
-
-// Starts the server to begin listening
+//   res.json(newCharacter);
+// });
+var db = require("./models");
+// Syncing our sequelize models and then starting our Express app
 // =============================================================
-app.listen(PORT, function () {
-  console.log("App listening on PORT " + PORT);
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
 });
