@@ -1,51 +1,50 @@
 $(document).ready(function () {
-  //pictures.html code
-  $(".picBtn").click(function () {
-    const selectedFile = document.getElementById("pictures").files[0];
-    console.log(selectedFile);
-    $(".file-path").val("");
-  });
-
-  //gifts.html code
-  // $(".giftBtn").click(function () {
-  //   console.log("gift button");
-  // });
+  //Materialize jQuery
   $(".datepicker").datepicker();
 
-  $(".giftBtn").on("click", function (event) {
-    event.preventDefault();
+  //Variables
 
-    // image file
-    // const image = document.getElementById("#giftPic").files;
+  //sent radio button
+  const sentNoVar = $("#sentNo").prop("checked");
 
-    //sent radio button
-    const sentNoVar = $("#sentNo").prop("checked");
+  const sentYesVar = $("#sentYes").prop("checked");
 
-    const sentYesVar = $("#sentYes").prop("checked");
+  let sent;
+  if (sentNoVar) {
+    sent = "no";
+  } else if (sentYesVar) {
+    sent = "yes";
+  } else {
+    sent = "";
+  }
 
-    let sent;
-    if (sentNoVar) {
-      sent = "no";
-    } else if (sentYesVar) {
-      sent = "yes";
+  const image = document.getElementById("giftPic").files;
+
+  const giftInfo = {
+    name: $("#name").val(),
+    gift: $("#gift").val(),
+    date: $("#date").val(),
+    address: $("#address").val(),
+    image: image,
+    sent: sent,
+  };
+  // const selectedFile = document.getElementById("pictures").files[0];
+
+  //when you hit Submit for New Gift
+  function giftButtonSubmit() {
+    if (!giftInfo) {
+      return;
     } else {
-      sent = "";
+      addNote(giftInfo);
+      appendNewRow();
     }
 
-    const giftInfo = {
-      name: $("#name").val(),
-      gift: $("#gift").val(),
-      date: $("#date").val(),
-      address: $("#address").val(),
-      // image: image,
-      sent: sent,
-    };
     console.log(giftInfo);
+  }
 
-    // Send the POST request.
-    $.post("/api/notes", giftInfo).then(() => {
-      // Reload the page to get the updated list
-
+  //posts new row into Table
+  function addNote(data) {
+    $.post("/api/notes", data).then(() => {
       $("#name").val("");
       $("#gift").val("");
       $("#date").val("");
@@ -53,16 +52,32 @@ $(document).ready(function () {
       $(".file-path").val("");
       $(".sent").prop("checked", false);
     });
+  }
 
+  // adds new Note info to page
+  function appendNewRow() {
     const newRow = `<div class="col s9">
-    <p>${giftInfo.name}</p>
-  </div>
-  <div class="col s3">
-    <a class="btn red lighten-2 edit">
-      <i class="material-icons">edit</i>
-    </a>
-  </div>`;
+      <p>${giftInfo.name}</p>
+    </div>
+    <div class="col s3">
+      <a class="btn red lighten-2 edit">
+        <i class="material-icons">edit</i>
+      </a>
+    </div>`;
 
     $("#gifts").append(newRow);
+  }
+
+  //pictures.html code
+  $(".picBtn").click(function (e) {
+    e.preventDefault();
+    console.log(selectedFile);
+    $(".file-path").val("");
+  });
+
+  //gift.html code
+  $(".giftBtn").click(function (e) {
+    e.preventDefault();
+    giftButtonSubmit();
   });
 });
